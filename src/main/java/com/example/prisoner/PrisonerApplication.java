@@ -14,8 +14,6 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 
-import java.io.Serializable;
-
 @SpringBootApplication
 public class PrisonerApplication {
 	Logger logger = LoggerFactory.getLogger(PrisonerApplication.class);

@@ -35,12 +35,12 @@ public class PrisonerController {
         System.out.println(id);
         Prisoner  p  =  prisonerService.getPrisonerById(id);
         l.info(p.toString());
-        return ResponseEntity.ok(prisonerService.getPrisonerById(id));
+        return ResponseEntity.ok(p);
     }
 
     @PostMapping("/")
     public void addPrisoner(@RequestBody Prisoner prisoner){
-            prisonerService.addPrisoner(prisoner);
+        prisonerService.addPrisoner(prisoner);
     }
 
     @GetMapping("/down")

@@ -2,6 +2,7 @@ package com.example.prisoner.models;
 
 import lombok.*;
 import org.hibernate.Hibernate;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -18,6 +19,7 @@ import java.util.Objects;
 public class Prisoner {
     @Id
     @GeneratedValue
+    @Column(name = "id", nullable = false)
     private Long pid;
 
     String name;
