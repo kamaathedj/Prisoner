@@ -39,8 +39,6 @@ public class PrisonerApplication {
 		return event -> System.out.println("availability changed + " + event.getState());
 	}
 
-
-
 	@Bean
 	ApplicationListener<MyEvent> myEvent(){
 

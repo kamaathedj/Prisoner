@@ -8,11 +8,13 @@ import org.springframework.boot.availability.AvailabilityChangeEvent;
 import org.springframework.boot.availability.LivenessState;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
+@ResponseBody
 public class PrisonerController {
     Logger l = LoggerFactory.getLogger(Prisoner.class);
 
@@ -31,11 +33,8 @@ public class PrisonerController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Prisoner> getPrisonerById( @PathVariable long id){
-        System.out.println(id);
-        Prisoner  p  =  prisonerService.getPrisonerById(id);
-        l.info(p.toString());
-        return ResponseEntity.ok(p);
+    public ResponseEntity<Prisoner> getPrisonerById(@PathVariable long id){
+        return ResponseEntity.ok(prisonerService.getPrisonerById(id));
     }
 
     @PostMapping("/")

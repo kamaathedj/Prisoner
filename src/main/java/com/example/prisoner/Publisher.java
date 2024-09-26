@@ -1,11 +1,6 @@
 package com.example.prisoner;
 
-import org.springframework.boot.availability.AvailabilityChangeEvent;
-import org.springframework.boot.availability.LivenessState;
-import org.springframework.boot.context.event.ApplicationReadyEvent;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.context.event.ApplicationContextEvent;
 import org.springframework.stereotype.Component;
 
 
@@ -26,5 +21,4 @@ public class Publisher {
         publisher.publishEvent(event);
 
     }
-
 }

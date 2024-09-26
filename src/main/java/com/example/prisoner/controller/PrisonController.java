@@ -2,6 +2,7 @@ package com.example.prisoner.controller;
 
 import com.example.prisoner.models.Prison;
 import com.example.prisoner.services.PrisonService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,7 +20,7 @@ public class PrisonController {
     }
 
     @GetMapping("/prison")
-    public List<Prison> getPrisons(){
-        return service.getPrisons();
+    public ResponseEntity<List<Prison>> getPrisons(){
+        return ResponseEntity.ok(service.getPrisons());
     }
 }

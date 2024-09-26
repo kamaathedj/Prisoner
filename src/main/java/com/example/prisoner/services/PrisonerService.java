@@ -4,16 +4,20 @@ import com.example.prisoner.models.Prisoner;
 import com.example.prisoner.models.PrisonerStuff;
 import com.example.prisoner.repository.PrisonerRepository;
 import com.example.prisoner.repository.PrisonerStuffRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PrisonerService {
     private final PrisonerRepository repository;
     private final PrisonerStuffRepository stuffRepository;
     private final PrisonService service;
+    private final Logger L = LoggerFactory.getLogger(PrisonerService.class);
 
 
     public PrisonerService(PrisonerRepository repository, PrisonerStuffRepository stuffRepository, PrisonService service) {
@@ -26,8 +30,8 @@ public class PrisonerService {
         return repository.findAll();
     }
 
-    public Prisoner getPrisonerById(Long id){
-       return repository.getById(id);
+    public Prisoner getPrisonerById(Long id) throws Error{
+        return repository.getById(id);
 
     }
     @Transactional
